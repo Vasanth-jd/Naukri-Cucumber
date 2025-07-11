@@ -1,5 +1,6 @@
 Feature: Naukri Application Testing
 
+
 @smoke
 Scenario: User Enters Valid Username and Password
 
@@ -14,7 +15,7 @@ Scenario: User Enter to Profile Details Page
 Given User landed on Naukuri profile page
 When User clicks the three code symbol
 And User should view new pop up page and click 
-Then User landed in to profile details page "Add 14 missing details"
+Then User landed in to profile details page "Add 12 missing details"
 
 
 
@@ -32,7 +33,7 @@ And   User select ending year from course detail
 And   User select course requires a pass from grading system 
 And   User clicks save button
 Then  User successfully entered education details
-@smoke
+@sanity
 Scenario: User Enters Key Skills
 
 Given User should be on  Naukri Profile details page
@@ -40,6 +41,14 @@ When User clicks key skills button
 And User enters Key  skills
 And User clicks  key skill save  button
 Then User successfully entered key skills
+
+@smoke
+Scenario: User Upload Resume
+
+Given User should be on  Naukri Profile details page
+When User clicks upload resume
+Then User successfully uploded resume in resume field
+
 
 
 

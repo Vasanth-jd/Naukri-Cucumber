@@ -25,7 +25,8 @@ public class ProfilePageModel extends BaseClass implements ProfilePageInterfaceE
 
 	public void getThreeLines() {
 		implicitlyWait("seconds", 10);
-		elementClick(threeLine);
+		javascriptClick(threeLine);
+	//	elementClick(threeLine);
 		
 	}
 

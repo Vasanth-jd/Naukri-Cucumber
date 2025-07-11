@@ -2,7 +2,10 @@ package com.reusableMethosd;
 import static org.testng.Assert.assertEquals;
 import java.awt.AWTException;
 import java.awt.Desktop;
+import java.awt.HeadlessException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
@@ -380,5 +383,27 @@ public class BaseClass {
 		j.executeScript("window.scrollBy(0,"+range+");");
 	}
 	
-}
+	protected static void fileUpload(String location) {
+		
+			try {
+				StringSelection selection = new StringSelection(location);
+				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection,null);
+   Robot robot = new Robot();
+   robot.delay(2000);
+  
+   robot.keyPress(KeyEvent.VK_CONTROL);
+robot.keyPress(KeyEvent.VK_V);
+robot.keyPress(KeyEvent.VK_ENTER);
+			} catch (HeadlessException e) {
+				
+			} catch (AWTException e) {
+				Assert.fail("ERROR:OCCUR DURING KEYBOARD ACTION");
+			
+			}
+   
+   
+		}
+	}
+	
+
 

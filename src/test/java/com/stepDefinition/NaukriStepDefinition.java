@@ -161,9 +161,20 @@ public class NaukriStepDefinition extends BaseClass {
 		} catch (IOException e) {
 			
 		}
-        
-    }
+  }
 
+
+    @When("User clicks upload resume")
+    public void user_clicks_upload_resume() {
+    	pageobjectmanager.getResumeUpload().getUplod();
+   
+    
+}
+    @Then("User successfully uploded resume in resume field")
+    public void user_successfully_uploded_resume_in_resume_field() {
+   
+    
+}
 
 
 

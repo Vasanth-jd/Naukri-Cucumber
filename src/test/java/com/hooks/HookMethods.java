@@ -2,6 +2,8 @@ package com.hooks;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import com.reusableMethosd.BaseClass;
+
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 public class HookMethods extends BaseClass {
@@ -11,7 +13,7 @@ public class HookMethods extends BaseClass {
 		System.out.println("scenario name is "+name);
 		
 	}
-	
+	@After
 	public void afterHooks(Scenario s) {
 		if(s.isFailed()) {
 			TakesScreenshot ts = (TakesScreenshot)driver;

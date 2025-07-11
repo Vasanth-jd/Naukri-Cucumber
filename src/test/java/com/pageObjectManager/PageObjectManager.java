@@ -4,7 +4,7 @@ import com.pageObjectModel.EducationPageModel;
 import com.pageObjectModel.KeySkillPage;
 import com.pageObjectModel.LoginPageObjectModel;
 import com.pageObjectModel.ProfilePageModel;
-
+import com.pageObjectModel.ResumeUploadModel;
 import com.utility.ExcelUtility;
 import com.utility.FileReadManager;
 
@@ -67,6 +67,14 @@ public class PageObjectManager {
 			keySkill= new KeySkillPage();
 		}
 		return keySkill;
+		
+	}
+	private ResumeUploadModel resumeUpload;
+	public ResumeUploadModel getResumeUpload() {
+		if(resumeUpload==null) {
+			resumeUpload= new ResumeUploadModel();
+		}
+		return resumeUpload;
 		
 	}
 	
